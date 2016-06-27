@@ -16,7 +16,7 @@ cache:
     - "$HOME/.gradle/wrapper/"
 
 after_success:
-    - export REPO=enmasseproject/enmasse-bench
+    - export REPO=enmasseproject/ebench
     - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
     - docker build -t $REPO:$COMMIT .
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
